@@ -1,0 +1,67 @@
+@import 'variables';
+.banner {
+    width: 100%;
+    height: 223px;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden; // 裁剪超出圆角的部分
+    margin-bottom: 43px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // 保证图片不变形
+    }
+
+    .banner-overlay {
+        position: absolute; // 绝对定位，覆盖在图片上
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); // 关键！黑色背景，40%不透明度
+        border-radius: 25px; // 确保遮罩也跟着圆角走
+    }
+
+    .banner-text {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%); // 绝对居中
+        color: white;
+        font-size: 48px;
+        width: 90%;
+        text-align: center;
+        z-index: 1;
+        margin: 0;
+    }
+}
+
+// 手机适配
+@media (max-width: $breakpoint-mobile) {
+    .banner {
+        // 1. 强制把高度改矮 (手机版设计通常是 111px)
+        height: 111px; 
+        margin-top: 7px;
+        margin-bottom: 22px;
+        // 2. 圆角也要变小一点
+        border-radius: 10px; 
+        overflow: hidden;
+        // 3. 既然高度变了，图片会自动通过 object-fit: cover 重新裁剪
+
+        .banner-overlay {
+        border-radius: 10px; // 确保遮罩也跟着圆角走
+    }
+
+    // 4. 文字也需要调整，不然会太大
+    .banner-text {
+        font-size: 24px; // 字体变小
+        text-align: left; // 靠左对齐 (Kasa 手机版习惯)
+        left: 16px; // 距离左边一点距离
+        width: auto; // 取消宽度限制
+        transform: translateY(-50%); // 取消水平居中，只保留垂直居中
+    }
+    }
+
+    
+}

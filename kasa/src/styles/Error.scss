@@ -1,0 +1,62 @@
+// src/styles/Error.scss
+
+// 如果你有变量文件，可以用 @import 'variables';
+// 这里直接写颜色代码 #FF6060 (Kasa红)
+@import 'variables';
+
+.kasa-header {
+    padding-top: 40px;
+}
+.error-page {
+    display: flex;
+    flex-direction: column; // 垂直排列
+    align-items: center;    // 水平居中
+    color: #FF6060;         // 整体文字颜色设为红色
+    margin-top: 89px;      // 距离 Header 远一点
+    margin-bottom: 139px;
+
+    .error-title {
+        font-size: 288px;   // 巨大的字体
+        font-weight: 700;
+        margin-bottom: 139px;          // 去掉默认边距
+    }
+
+    .error-subtitle {
+        font-size: 36px;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 150px; // 把下面的链接挤远一点
+        text-align: center;   // 防止文字折行时靠左
+    }
+
+    .error-link {
+        color: #000000;       // 链接通常是黑色
+        font-size: 18px;
+        text-decoration: underline; // 必须要有下划线
+        
+        &:hover {
+            color: #FF6060; // 鼠标放上去变红 (可选优化)
+        }
+    }
+}
+
+// 👇👇👇 手机端适配 (非常重要！) 👇👇👇
+@media (max-width: $breakpoint-mobile) {
+    .error-page {
+        margin-top: 50px;
+        
+        .error-title {
+            font-size: 96px; // 手机上不能太大了，改小到 96px
+        }
+
+        .error-subtitle {
+            font-size: 18px; // 文字也变小
+            width: 80%;      // 稍微限制宽度，让它换行好看点
+            margin-bottom: 100px;
+        }
+
+        .error-link {
+            font-size: 14px;
+        }
+    }
+}

@@ -4,7 +4,7 @@ import React from 'react' // 只要用了JSX，引入React总是没错的
 import Header from './components/Header'
 import Footer from './components/Footer'
 import AppRouter from './components/AppRouter'
-import './styles/App.scss'
+
 
 function App() {
   return (

@@ -1,0 +1,81 @@
+/* src/styles/Collapse.scss */
+// 👇 1. 引入变量文件 (不需要写下划线和后缀)
+@import 'variables'; 
+
+.collapse {
+    width: 100%;
+    
+    .collapse-header {
+        // 👇 2. 使用变量替换颜色
+        background-color: $color-primary; // 以前是 #FF6060
+        color: $color-white;              // 以前是 white 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 54px;
+        padding: 10px 24px 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .collapse-arrow {
+            width: 24px; 
+            height: 24px;
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-3px);
+            &.open {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .collapse-content {
+        background-color: $color-grey;  // 以前是 #F6F6F6
+        color: $color-black;            // 以前是 #000000
+        
+        overflow: hidden;
+        max-height: 0; 
+        opacity: 0;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        
+        border-radius: 0 0 5px 5px;
+        position: relative;
+        top: -5px;
+
+        &.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .collapse-text {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+    }
+}
+
+// 手机适配
+@media (max-width: $breakpoint-mobile) {
+    .collapse {
+        margin-bottom: 20px;
+        .collapse-header {
+            height: 30px;
+            h3 { font-size: 13px; }
+            .collapse-arrow { width: 16px; height: 16px; }
+        }
+        .collapse-content .collapse-text {
+            font-size: 12px;
+            padding-top: 15px;
+        }
+    }
+}

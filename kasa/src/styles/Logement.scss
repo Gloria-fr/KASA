@@ -1,0 +1,149 @@
+@import 'variables'; // 引入变量
+
+.logement-page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 100px; // 底部留白
+}
+
+/* --- 头部信息区域 --- */
+.logement-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: $color-primary;
+
+    // 左侧
+    .logement-info {
+        h1 {
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0 0 10px 0;
+        }
+        .location {
+            font-size: 18px;
+            color: $color-black;
+            margin: 0 0 20px 0;
+        }
+        .tags-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    }
+
+    // 右侧
+    .logement-host-rating {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end; // 靠右对齐
+
+        .host-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .host-name {
+                display: flex;
+                flex-direction: column;
+                text-align: right;
+                font-size: 18px;
+                color: $color-primary;
+                line-height: 1.2;
+            }
+            .host-picture {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                object-fit: cover;
+                background-color: #C4C4C4;
+            }
+        }
+
+        .rating {
+            display: flex;
+            gap: 5px;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+/* --- 底部折叠区域 --- */
+.logement-collapses {
+    display: flex;
+    justify-content: space-between;
+    gap: 76px; // 两个折叠条之间的间距
+    margin-top: 30px;
+    margin-bottom: 50px;
+    .collapse-item {
+        width: 100%; // 每个占一半 (flex会自动处理)
+    }
+
+    // 设备列表样式 (去除默认的点)
+    .equipments-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+/* --- 📱 手机端适配 --- */
+@media (max-width: $breakpoint-mobile) {
+     .collapse{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+     .logement-page {
+    padding: 0 20px; // 底部留白
+}
+
+    .logement-header {
+        flex-direction: column; // 垂直堆叠
+        .logement-info {
+            h1 { font-size: 18px; }
+            .location { font-size: 14px; margin-bottom: 10px; }
+        }
+
+        .logement-host-rating {
+            flex-direction: row-reverse; // ⭐ 关键：星星在左，房东在右
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            
+            .rating img {
+                width: 15px;
+                height: 15px;
+            }
+            .host-info {
+                .host-name { font-size: 12px; }
+                .host-picture { width: 32px; height: 32px; }
+                
+            }
+        }
+    }
+
+    .logement-collapses {
+        flex-direction: column; // 折叠条变成垂直堆叠
+        gap: 20px;
+        margin-bottom: 27px;
+    
+           .collapse .collapse-header {
+            padding-left: 10px;
+            padding-right: 12px;
+
+            h3 {
+                font-weight: 700;
+       }
+     }
+           
+    }
+}
