@@ -1,4 +1,4 @@
-import '../styles/Tag.scss' // 引入它的专属样式
+import '../styles/Tag.scss' 
 
 function Tag({ text }) {
     return (

@@ -1,6 +1,5 @@
 // src/components/Footer.jsx
-import '../styles/Footer.scss' // <--- 注意这里是两个点，去上一级找 styles
-// 如果你有白色Logo，在这里引入，没有就先用文字
+import '../styles/Footer.scss' 
 import logoWhite from '../assets/logoWhite.svg'
 
 function Footer() {

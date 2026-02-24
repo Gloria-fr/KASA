@@ -1,14 +1,14 @@
 /* src/styles/Collapse.scss */
-// 👇 1. 引入变量文件 (不需要写下划线和后缀)
+
 @import 'variables'; 
 
 .collapse {
     width: 100%;
     
     .collapse-header {
-        // 👇 2. 使用变量替换颜色
-        background-color: $color-primary; // 以前是 #FF6060
-        color: $color-white;              // 以前是 white 
+        
+        background-color: $color-primary; 
+        color: $color-white;              
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -22,7 +22,7 @@
         z-index: 2;
 
         h3 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 700;
             margin: 0;
         }
@@ -39,8 +39,8 @@
     }
 
     .collapse-content {
-        background-color: $color-grey;  // 以前是 #F6F6F6
-        color: $color-black;            // 以前是 #000000
+        background-color: #FAFAFA;  
+        color: $color-black;            
         
         overflow: hidden;
         max-height: 0; 
@@ -54,17 +54,18 @@
         &.open {
             max-height: 500px;
             opacity: 1;
+            
         }
 
         .collapse-text {
             font-size: 18px;
             line-height: 1.5;
             font-weight: 400;
+            margin: 25px 20px 20px 28px;
         }
     }
 }
 
-// 手机适配
 @media (max-width: $breakpoint-mobile) {
     .collapse {
         margin-bottom: 20px;

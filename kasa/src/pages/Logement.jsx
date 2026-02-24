@@ -4,29 +4,27 @@ import Slideshow from '../components/Slideshow'
 import Tag from '../components/Tag'
 import Collapse from '../components/Collapse'
 
-// 引入样式和星星图标
 import '../styles/Logement.scss' 
 import starActive from '../assets/star-active.png'
 import starInactive from '../assets/star-inactive.png'
 
 function Logement() {
-    // 1. 获取 URL 中的 ID
+    
     const { id } = useParams()
-    // 2. 查找对应数据
     const housing = logements.find(item => item.id === id)
 
-    // 3. 如果找不到 ID，跳转 404
+    // 404
     if (!housing) {
         return <Navigate to="/404" replace />
     }
 
-    // 4. 处理数据逻辑
-    // 房东名字拆分 (为了换行)
+    // Data processing for display
+    // Name split 
     const [firstName, lastName] = housing.host.name.split(' ')
-    // 评分数组 [1, 2, 3, 4, 5]
+    // Note [1, 2, 3, 4, 5]
     const ratingScale = [1, 2, 3, 4, 5]
 
-    // 5. 处理 Equipments 列表 (把数组转成 JSX 列表)
+    // Equipments
     const equipmentsList = (
         <ul className="equipments-list">
             {housing.equipments.map((equipment, index) => (
@@ -37,13 +35,13 @@ function Logement() {
 
     return (
         <div className="logement-page">
-            {/* 顶部轮播图 */}
+            {/* Slideshow  */}
             <Slideshow pictures={housing.pictures} />
 
-            {/* 中间信息区域 (标题、标签、房东、评分) */}
+            {/* zone infomation */}
             <div className="logement-header">
                 
-                {/* 左侧：标题 + 地点 + 标签 */}
+                {/* left：title + site + tag */}
                 <div className="logement-info">
                     <h1>{housing.title}</h1>
                     <p className="location">{housing.location}</p>
@@ -55,9 +53,9 @@ function Logement() {
                     </div>
                 </div>
 
-                {/* 右侧：房东信息 + 星星评分 */}
+                {/* right：Name + Note */}
                 <div className="logement-host-rating">
-                    {/* 房东 */}
+                    {/* Name */}
                     <div className="host-info">
                         <div className="host-name">
                             <span>{firstName}</span>
@@ -70,7 +68,7 @@ function Logement() {
                         />
                     </div>
 
-                    {/* 评分 (循环 5 次，判断当前分数是否 >= n) */}
+                    {/* Note (map((5) ，if >= n) */}
                     <div className="rating">
                         {ratingScale.map((n) => (
                             <img 
@@ -83,7 +81,7 @@ function Logement() {
                 </div>
             </div>
 
-            {/* 底部折叠区域 (Description 和 Équipements) */}
+            {/* Collapses */}
             <div className="logement-collapses">
                 <div className="collapse-item">
                     <Collapse title="Description" content={housing.description} />

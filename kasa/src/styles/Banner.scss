@@ -25,6 +25,18 @@
     }
 
     .banner-text {
+        font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* 增加字重 */
+  color: white;
+  
+  /* 组合拳：1px的黑色描边 + 4px的深色模糊阴影 */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0px  4px 4px rgba(0, 0, 0, 0.25); /* 这行是关键：添加立体投影 */
+     
         position: absolute;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%); // 绝对居中
