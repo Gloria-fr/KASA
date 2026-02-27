@@ -1,25 +1,25 @@
 @import 'variables';
 
 .tag {
-    background-color: $color-primary; // 红色
-    color: $color-white; // 白色
+    background-color: $color-primary; 
+    color: $color-white; 
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 700;
-    min-width: 115px; // 最小宽度，保证好看
+    min-width: 115px; 
     padding: 5px 25px;
     height: 25px;
 }
 
-// 手机适配
+
 @media (max-width: $breakpoint-mobile) {
     .tag {
         font-size: 10px;
         height: 18px;
-        min-width: auto; // 手机上取消最小宽度限制
+        min-width: auto; 
         border-radius: 10px;
         font-weight: 700;
         margin-right: 0;

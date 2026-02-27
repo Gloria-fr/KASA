@@ -18,24 +18,24 @@
     }
 }
 
-// 手机适配
+
 @media (max-width: $breakpoint-mobile) {
     .kasa-footer {
         height: 209px;
         margin-top: 27px;
         padding-top: 66px;
         .footer-text {
-            /* 1. 改回无衬线字体 (跟 Logo 风格一致) */
+          
         font-family: 'Montserrat', sans-serif; 
         
-        /* 2. 字体大小 */
+        
         font-size: 12px;
-        font-weight: 500; // 稍微加一点粗度，更清晰
+        font-weight: 500; 
         margin: 0 auto;
-        /* 3. 强制两行显示的技巧 */
-        width: 100px; // 限制宽度，逼迫文字换行
-        text-align: center; // 确保文字在小盒子里居中
-        line-height: 1.5; // 拉开两行字的间距
+       
+        width: 100px; 
+        text-align: center; 
+        line-height: 1.5; 
         margin-bottom: 58px;
         }
     }

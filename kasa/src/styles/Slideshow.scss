@@ -2,16 +2,16 @@
 
 .slideshow {
     width: 100%;
-    height: 415px; // 电脑端标准高度
-    position: relative; // 作为绝对定位子元素的参照物
+    height: 415px; 
+    position: relative; 
     margin-bottom: 30px;
-    border-radius: 25px; // 圆角
-    overflow: hidden; // 裁剪掉溢出的图片
+    border-radius: 25px; 
+    overflow: hidden; 
 
     .slide-image {
         width: 100%;
         height: 100%;
-        object-fit: cover; // 保证图片填满且不变形
+        object-fit: cover; 
     }
 
     .arrow {
@@ -25,12 +25,12 @@
 
         &.arrow-left {
             left: 20px;
-            transform: translateY(-50%) rotate(-90deg); // 👈 旋转箭头变成向左
+            transform: translateY(-50%) rotate(-90deg); 
         }
 
         &.arrow-right {
             right: 20px;
-            transform: translateY(-50%) rotate(90deg); // 👈 旋转箭头变成向右
+            transform: translateY(-50%) rotate(90deg); 
         }
     }
 
@@ -38,29 +38,29 @@
         position: absolute;
         bottom: 20px;
         left: 50%;
-        transform: translateX(-50%); // 水平居中
+        transform: translateX(-50%); 
         color: white;
         font-size: 18px;
         font-weight: 500;
         z-index: 2;
-        // 可选：加个文字阴影让它在白色图片上也看得见
+        // option
         text-shadow: 0 0 5px rgba(0,0,0,0.5); 
     }
 }
 
-// 手机适配
+
 @media (max-width: $breakpoint-mobile) {
     .slideshow {
-        height: 255px; // 手机端变矮
+        height: 255px; 
         border-radius: 10px;
         margin-bottom: 15px;
         .arrow {
-            width: 24px; // 箭头变小
+            width: 24px; 
             height: 24px;
         }
 
         .slide-counter {
-            display: none; // ⚠️ Kasa 设计图中，手机端通常隐藏页码
+            display: none; 
         }
     }
 }

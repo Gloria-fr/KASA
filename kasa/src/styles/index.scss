@@ -1,31 +1,30 @@
-/* src/styles/index.scss */
-// 1. 引入变量 (如果你需要用变量定义通用颜色)
+
 @import 'variables';
 
-// 2. 引入 Google Fonts (Kasa 项目用的是 Montserrat)
+// Google Fonts (Montserrat)
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-// 3. 全局重置 (Reset)
+// Reset
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; // 设置全局字体
+  font-family: 'Montserrat', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $color-black; // 使用变量 (或者直接写 #000000)
+  color: $color-black; 
 }
 
-// 4. 关键设置：盒模型 (解决 padding 撑大盒子的问题)
+
 * {
   box-sizing: border-box; 
 }
 
-// 5. 链接默认样式 (去除下划线，除非另有设置)
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-// 6. 列表默认样式 (去除前面的点)
+
 ul, ol {
     list-style: none;
     padding: 0;

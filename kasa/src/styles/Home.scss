@@ -1,22 +1,16 @@
 @import 'variables';
-.home {
-    // 👇 1. 限制内容的最大宽度 (Figma 设计稿标准是 1240px)
+.home { 
     max-width: 1240px;
-    
-    // 👇 2. 关键！让这个盒子在屏幕里“水平居中”，左右自动留白
     margin: 0 auto;
-    
-    // 👇 3. 给左右留一点安全距离 (防止小屏幕时贴边)
     padding: 0 100px;
     
-    // ... 其他原有的样式 (比如 margin-bottom 之类可以保留)
 }
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // 电脑端一行 3 个
-    gap: 60px; // 间距
-    background-color: #F6F6F6; // 灰色背景区域
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px; 
+    background-color: #F6F6F6; 
     padding-top: 56px;
     padding-left: 50px;
     padding-right: 50px;
@@ -24,17 +18,17 @@
     border-radius: 25px;
 }
 
-// 手机适配
+
 @media (max-width: $breakpoint-mobile) {
     .home {
 
     padding: 0 20px;
     
-    // ... 其他原有的样式 (比如 margin-bottom 之类可以保留)
+    
 }
     .cards-container {
-        grid-template-columns: 1fr; // 手机端一行 1 个
-        background-color: transparent; // 手机端不要灰色背景
+        grid-template-columns: 1fr; 
+        background-color: transparent; 
         padding: 0;
         gap: 20px;
     }

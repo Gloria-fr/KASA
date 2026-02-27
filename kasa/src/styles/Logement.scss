@@ -1,19 +1,19 @@
-@import 'variables'; // 引入变量
+@import 'variables'; 
 
 .logement-page {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 100px; // 底部留白
+    padding: 0 100px; 
 }
 
-/* --- 头部信息区域 --- */
+/* --- header --- */
 .logement-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     color: $color-primary;
 
-    // 左侧
+    // left
     .logement-info {
         h1 {
             font-size: 36px;
@@ -35,12 +35,12 @@
         }
     }
 
-    // 右侧
+    // right
     .logement-host-rating {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-end; // 靠右对齐
+        align-items: flex-end; 
 
         .host-info {
             display: flex;
@@ -75,18 +75,18 @@
     }
 }
 
-/* --- 底部折叠区域 --- */
+/* --- collapses --- */
 .logement-collapses {
     display: flex;
     justify-content: space-between;
-    gap: 76px; // 两个折叠条之间的间距
+    gap: 76px; 
     margin-top: 30px;
     margin-bottom: 50px;
     .collapse-item {
-        width: 100%; // 每个占一半 (flex会自动处理)
+        width: 100%; 
     }
 
-    // 设备列表样式 (去除默认的点)
+    // equipment 
     .equipments-list {
         list-style-type: none;
         padding: 0;
