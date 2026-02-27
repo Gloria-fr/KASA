@@ -7,11 +7,11 @@
     margin-top: 18px;
 
     .about-container {
-    width: 75%; // 设计稿里折叠条比 Banner 窄一点
-    margin: 0 auto; // 居中显示
+    width: 75%; 
+    margin: 0 auto; 
     display: flex;
     flex-direction: column;
-    gap: 28px; // Collapse 组件自带 margin-bottom
+    gap: 28px; 
 
     .collapse-content {
         padding: 0;
@@ -30,7 +30,7 @@
     margin-bottom: 19px;
 
     .about-container {
-        width: 100%; // 手机上要占满宽度
+        width: 100%; 
         gap: 20px;
     }
 
