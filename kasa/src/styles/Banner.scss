@@ -70,10 +70,11 @@
         font-size: 24px; 
         text-align: left; 
         left: 16px; 
-        width: auto; 
         transform: translateY(-50%); 
+        text-shadow: none !important;
+        width: 70% !important; 
+        white-space: normal !important; 
+        right: 16px;
+       }
     }
-    }
-
-    
 }
